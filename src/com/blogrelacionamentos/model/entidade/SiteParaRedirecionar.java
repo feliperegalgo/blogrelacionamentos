@@ -33,7 +33,11 @@ public class SiteParaRedirecionar implements EntityGae {
     
     @Override
     public Key getKey() {
-	return UtilsGaeDAO.createKey(getParentKey(), SiteParaRedirecionar.Attr.KIND, id);
+	return createKey(id);
+    }
+    
+    public static Key createKey(Long id) {
+	return UtilsGaeDAO.createKey(null, SiteParaRedirecionar.Attr.KIND, id);
     }
 
     @Override

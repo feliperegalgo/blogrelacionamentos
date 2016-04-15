@@ -1,7 +1,6 @@
 package com.blogrelacionamentos.view;
 
 import java.io.IOException;
-import java.util.GregorianCalendar;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -16,19 +15,9 @@ public class RedirecionarServlet extends HttpServlet {
     SiteParaRedirecionarDAO dao = new SiteParaRedirecionarDAO();
     
     public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-	String tipo = request.getParameter("tipo");
-	if ("criar".equals(tipo)) {
-	    SiteParaRedirecionar siteParaRedirecionar = new SiteParaRedirecionar();
-	    siteParaRedirecionar.setTipo("1");
-	    siteParaRedirecionar.setUrlParaRedirecionar("http://www.uol.com.br");
-	    siteParaRedirecionar.setDescricao("descricao");
-	    siteParaRedirecionar.setAtivado(true);
-	    siteParaRedirecionar.setDataAlteracao(new GregorianCalendar());
-	    dao.insert(siteParaRedirecionar);
-	}
 	
-	SiteParaRedirecionar siteParaRedirecionar = dao.findByTipo(tipo);
-	if (siteParaRedirecionar != null) {
+	SiteParaRedirecionar siteParaRedirecionar = dao.findByTipo(request.getParameter("tipo"));
+	if (siteParaRedirecionar != null && siteParaRedirecionar.isAtivado()) {
 	    response.sendRedirect(siteParaRedirecionar.getUrlParaRedirecionar());
 	} else {
 	    response.sendRedirect(request.getContextPath() + "/index.html");
