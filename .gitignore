@@ -1,0 +1,31 @@
+# tecurti
+*.class
+
+# Eclipse
+/.settings
+.classpath
+.project
+
+# AppEngine
+/war/WEB-INF/appengine-generated
+appengine-api*.jar
+appengine-endpoints*.jar
+appengine-jsr*.jar
+jsr107cache-1.1.jar
+
+# java
+/war/WEB-INF/classes
+
+# grunt
+/build/grunt/node_modules
+/build/grunt/build
+/build/grunt/npm-debug.log
+
+
+# Package Files #
+*.war
+*.ear
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
