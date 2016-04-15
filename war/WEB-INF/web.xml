@@ -5,14 +5,14 @@ xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	<servlet>
-		<servlet-name>Blogrelacionamentos</servlet-name>
-		<servlet-class>com.blogrelacionamentos.BlogrelacionamentosServlet</servlet-class>
+		<servlet-name>redirecionar</servlet-name>
+		<servlet-class>com.blogrelacionamentos.view.RedirecionarServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>Blogrelacionamentos</servlet-name>
-		<url-pattern>/blogrelacionamentos</url-pattern>
+		<servlet-name>redirecionar</servlet-name>
+		<url-pattern>/redirecionar</url-pattern>
 	</servlet-mapping>
 	<welcome-file-list>
-		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
 </web-app>
