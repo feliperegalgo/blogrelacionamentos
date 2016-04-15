@@ -28,7 +28,7 @@ String msg = (String) request.getAttribute("msg");
 <% } %>
 
 <div style="margin-bottom: 15px;">
-	<b>Exemplo:</b> https://blogrelacionamentos.appspot.com?tipo=VALOR
+	<b>Exemplo:</b> http://blogrelacionamentos.appspot.com?tipo=<%=siteParaEditar!=null?siteParaEditar.getTipo():"VALOR"%>
 </div>
 
 <table border="0">
